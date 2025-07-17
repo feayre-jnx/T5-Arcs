@@ -2,7 +2,7 @@
 
 ## About 
 For reference purposes, this shows how to train a T5 model for sentence completion and question answering tasks
-using a custom dataset. The dataset does not need to be made up of actual sentences. In this case, they are just items.
+using a custom dataset. The dataset does not need to be made up of actual sentences. In this case, they are just items and some attributes.
 
 ## Requirements
 ### For Local Environment 
@@ -43,7 +43,7 @@ Install using the dockerfile
 Clone the repository to the local environment or in the codes-box when using docker container
 
 ## Implementation
-There are 3 kinds of T5 implementation done in this repo.
+There are 3 kinds of T5 implementation done in this repo. Each has different way of preparing the data for variety.
 
 **1. Question Answering Task**
 
@@ -59,11 +59,8 @@ This task takes in incomplete input and completes the missing items. In this cas
 
 Run the ```t5_sentence_completion.ipynb``` to try it.
 
-**3. Question Answerinh and Sentence Completion Task**
+**3. Question Answering and Sentence Completion Task**
 
-This is simply the combination of the two tasks. First the model completes an incomplete item input. Then, the model will 
-suggest a corresponding element to the item it has completed. The model knows which task to perform by putting a prefix 
-before the input.  ```complete_item: ``` is used for completing the input and ```generate_element: ``` for suggesting the
-corresponding element.
+This is simply the combination of the two tasks. First, the model completes an incomplete item input information. Then, the model will suggest a corresponding element to the item it has completed. The model will know which task to perform by putting a prefix before the input.  ```complete_item: ``` is used for completing the input and ```generate_element: ``` for suggesting the corresponding element.
 
 Run the ```t5_combination_qa_sc.ipynb``` to try it.
